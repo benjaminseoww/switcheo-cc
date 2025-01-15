@@ -1,5 +1,5 @@
 # Launching the frontend 
-This solution was build with React in ViteJs with Typescript
+This solution was build with React in ViteJs with Typescript<br>
 Follow the steps to launch the application for Problem 2
 
 ## Step 1: Installation 

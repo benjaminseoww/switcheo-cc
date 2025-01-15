@@ -9,6 +9,10 @@ const (
 
 	// MemStoreKey defines the in-memory store key
 	MemStoreKey = "mem_blockchain"
+
+	ResourceKey = "Resource/value/"
+
+	ResourceCountKey = "Resource/count/"
 )
 
 var (

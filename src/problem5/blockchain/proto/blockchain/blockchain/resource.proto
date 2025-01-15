@@ -1,0 +1,13 @@
+syntax = "proto3";
+package blockchain.blockchain;
+
+option go_package = "blockchain/x/blockchain/types";
+
+message Resource {
+  
+  string name = 1; 
+  string creator = 2; 
+  string owner = 3; 
+  string description = 4; 
+  uint64 id = 5; 
+}

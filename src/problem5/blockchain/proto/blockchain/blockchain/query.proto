@@ -1,4 +1,5 @@
 syntax = "proto3";
+
 package blockchain.blockchain;
 
 import "amino/amino.proto";
@@ -6,25 +7,74 @@ import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
 import "blockchain/blockchain/params.proto";
+import "blockchain/blockchain/resource.proto";
 
 option go_package = "blockchain/x/blockchain/types";
 
 // Query defines the gRPC querier service.
 service Query {
+  
   // Parameters queries the parameters of the module.
-  rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
+  rpc Params (QueryParamsRequest) returns (QueryParamsResponse) {
     option (google.api.http).get = "/blockchain/blockchain/params";
+  
+  }
+  
+  // Queries a list of ShowResource items.
+  rpc ShowResource (QueryShowResourceRequest) returns (QueryShowResourceResponse) {
+    option (google.api.http).get = "/blockchain/blockchain/show_resource/{id}";
+  
+  }
+  
+  // Queries a list of ListResource items.
+  rpc ListResource (QueryListResourceRequest) returns (QueryListResourceResponse) {
+    option (google.api.http).get = "/blockchain/blockchain/list_resource";
+  
+  }
+  
+  // Queries a list of FilterResources items.
+  rpc FilterResources (QueryFilterResourcesRequest) returns (QueryFilterResourcesResponse) {
+    option (google.api.http).get = "/blockchain/blockchain/filter_resources/{nameFilter}/{descriptionFilter}/{ownerFilter}/{creatorFilter}";
+  
   }
 }
-
 // QueryParamsRequest is request type for the Query/Params RPC method.
 message QueryParamsRequest {}
 
 // QueryParamsResponse is response type for the Query/Params RPC method.
 message QueryParamsResponse {
+  
   // params holds all the parameters of this module.
-  Params params = 1 [
-    (gogoproto.nullable) = false,
-    (amino.dont_omitempty) = true
-  ];
+  Params params = 1 [(gogoproto.nullable) = false, (amino.dont_omitempty) = true];
 }
+
+message QueryShowResourceRequest {
+  uint64 id = 1;
+}
+
+message QueryShowResourceResponse {
+  Resource resource = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryListResourceRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryListResourceResponse {
+  repeated Resource                               resource   = 1 [(gogoproto.nullable) = false];
+           cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+
+message QueryFilterResourcesRequest {
+  string                                nameFilter        = 1;
+  string                                descriptionFilter = 2;
+  string                                ownerFilter       = 3;
+  string                                creatorFilter     = 4;
+  cosmos.base.query.v1beta1.PageRequest pagination        = 5;
+}
+
+message QueryFilterResourcesResponse {
+  repeated Resource resource = 1 [(gogoproto.nullable) = false];
+  cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+

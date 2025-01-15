@@ -23,7 +23,7 @@ ignite chain serve
 cd resourceclient
 ```
 
-### all the CRUD functions in main.go main()
+### call CRUD functions in main.go main()
 - `create_resource(name string, description string, from_user string)`:  Create a resource.
     - `name`: name of resource 
     - `description`: description of resource 

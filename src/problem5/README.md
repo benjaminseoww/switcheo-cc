@@ -48,5 +48,5 @@ cd resourceclient
 
 ### Call the funcitions
 ```
-go run problem4.go
+go run main.go
 ```

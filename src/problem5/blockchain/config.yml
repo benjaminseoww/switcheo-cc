@@ -7,8 +7,8 @@ accounts:
   - 200000000stake
 - name: bob
   coins:
-  - 10000token
-  - 100000000stake
+  - 50000token
+  - 500000000stake
 client:
   openapi:
     path: docs/static/openapi.yml

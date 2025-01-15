@@ -1,21 +1,29 @@
 # Problem 4
 Solution is written in Golang
+---
 
-## Implementation 1
-Iteration with for loop <br>
-Time Complexity: O(n) <br>
-Space Complexity: O(1) <br>
+### **1. Iteration Using a For Loop**
+- **Description**: Computes the sum iteratively using a `for` loop.
+- **Time Complexity**: `O(n)`
+- **Space Complexity**: `O(1)`
+---
 
-## Implementation 2 
-Math formula for sum of 1, 2, ..., n <br>
-Time Complexity: O(1) <br>
-Space Complexity: O(1) <br>
+### **2. Mathematical Formula**
+- **Description**: Uses the formula for the sum of the first `n` natural numbers:
+  \[
+  \text{Sum} = \frac{n \cdot (n + 1)}{2}
+  \]
+- **Time Complexity**: `O(1)`
+- **Space Complexity**: `O(1)`
 
-## Implementation 3
-Recursion <br>
-Time Complexity: O(n) <br>
-Space Complexity: O(n) <br>
+---
 
+### **3. Recursion**
+- **Description**: Recursively computes the sum by adding `n` to the sum of `1` to `n-1`.
+- **Time Complexity**: `O(n)`
+- **Space Complexity**: `O(n)`
+
+---
 # Running the solutions 
 ```
 go run problem4.go

@@ -5,12 +5,12 @@ This repository contains two main components: <br>
 
 ## Building the blockchain 
 
-###Navigate to Blockchain Directory
+### Navigate to Blockchain Directory
 ```
 cd blockchain
 ```
 
-###Run the blockchain
+### Run the blockchain
 ```
 ignite chain serve
 ```
@@ -18,12 +18,12 @@ ignite chain serve
 ## Using the CRUD Interface
 
 
-###Navigate to CRUD Interface Directory
+### Navigate to CRUD Interface Directory
 ```
 cd resourceclient
 ```
 
-###all the CRUD functions in main.go main()
+### all the CRUD functions in main.go main()
 - `create_resource(name string, description string, from_user string)`:  Create a resource.
     - `name`: name of resource 
     - `description`: description of resource 
